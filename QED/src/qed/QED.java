@@ -4,7 +4,12 @@
  */
 package qed;
 
+import java.util.List;
+import javax.swing.SwingUtilities;
 import qed.node.QEDDiagram;
+import qed.node.QEDNode;
+import qed.ui.QEDDiagramCanvas;
+import qed.ui.QEDDiagramFrame;
 
 /**
  *
@@ -25,8 +30,27 @@ public class QED {
         
         int interactions = 2;
         
-        QEDDiagram.generateDiagrams(bosonSources, fermionSources, bosonDrains, fermionDrains, interactions);
+        final List<QEDNode[]> diagrams = QEDDiagram.generateDiagrams(bosonSources, fermionSources, bosonDrains, fermionDrains, interactions);
+
+        //System.out.println("-----------------------");
+        System.out.println("diagrams: " + diagrams.size());
+        for(QEDNode[] d: diagrams){
+            QEDDiagram.show(d);
+        }
         
+        
+//        SwingUtilities.invokeLater(new Runnable() {
+//
+//            @Override
+//            public void run() {
+//              
+//                QEDDiagramCanvas canvas = new QEDDiagramCanvas();
+//                canvas.addDiagram(diagrams.get(0));
+//                
+//                QEDDiagramFrame frame = new QEDDiagramFrame(canvas);
+//                
+//            }
+//        });
         
         
     }

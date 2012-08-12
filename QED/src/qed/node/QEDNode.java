@@ -36,6 +36,12 @@ public class QEDNode implements Copyable<QEDNode> {
         fermions = new int[fermionsMaxNumber];
     }
 
+    public QEDNodeType getType() {
+        return type;
+    }
+
+    
+    
     public boolean hasFreeBosonLinks() {
         return bosonsNumber < bosonsMaxNumber;
     }
@@ -56,6 +62,8 @@ public class QEDNode implements Copyable<QEDNode> {
         fermions[fermionsNumber++] = index;
     }
 
+    
+    
     @Override
     public QEDNode copy() {
         QEDNode copy = new QEDNode();

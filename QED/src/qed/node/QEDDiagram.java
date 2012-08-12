@@ -122,11 +122,11 @@ public class QEDDiagram {
             }
         }
 
-        System.out.println("-----------------------");
-        System.out.println("completed: " + completed.size());
-        for(QEDNode[] d: completed){
-            show(d);
-        }
+        //System.out.println("-----------------------");
+//        System.out.println("completed: " + completed.size());
+//        for(QEDNode[] d: completed){
+//            show(d);
+//        }
         
         return completed;
     }
@@ -157,7 +157,7 @@ public class QEDDiagram {
         return copy;
     }
 
-    static void show(QEDNode[] nodes) {
+    public static void show(QEDNode[] nodes) {
         System.out.println("Diagram:");
         for (int i = 0; i < nodes.length; i++) {
             System.out.println(i + ") " + nodes[i]);
